@@ -104,6 +104,41 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Features Section */}
+        <section id="por-que-ia" className="py-24 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-12">
+              <div className="group space-y-4 p-8 rounded-3xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5 text-center md:text-left">
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
+                  <Zap className="text-primary w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold leading-tight">Implementación Instantánea</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Genera la Declaración de Aplicabilidad (SoA) y el Alcance en minutos. Sin redactar una sola palabra.
+                </p>
+              </div>
+              <div className="group space-y-4 p-8 rounded-3xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5 text-center md:text-left">
+                <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
+                  <FileText className="text-accent w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold leading-tight">Evidencia Inteligente</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Sube tus capturas y nuestra IA las valida según el estándar ISO 27001:2022. Auditoría en tiempo real.
+                </p>
+              </div>
+              <div className="group space-y-4 p-8 rounded-3xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5 text-center md:text-left">
+                <div className="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
+                  <CheckCircle className="text-green-500 w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold leading-tight">Ready to Audit Score</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Un panel visual que te indica exactamente qué día estás listo para que COMPECER emita tu certificado.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Pricing Section */}
         <section id="precios" className="py-24 px-6 bg-[#001f3f]/30">
           <div className="max-w-7xl mx-auto text-center mb-16">
