@@ -14,12 +14,12 @@ export default function LandingPage() {
             <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
               <Shield className="text-white w-6 h-6" />
             </div>
-            <span className="text-2xl font-bold tracking-tight">Compecer <span className="text-primary">Express</span></span>
+            <span className="text-2xl font-bold tracking-tight">Compecer <span className="text-accent italic">Express</span></span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <a href="#solucion" className="hover:text-white transition-colors">Solución</a>
-            <a href="#como-funciona" className="hover:text-white transition-colors">Cómo funciona</a>
-            <a href="#precios" className="hover:text-white transition-colors">Precios</a>
+            <a href="#solucion" className="hover:text-accent transition-colors">La Solución</a>
+            <a href="#por-que-ia" className="hover:text-accent transition-colors">¿Por qué IA?</a>
+            <a href="#precios" className="hover:text-accent transition-colors">Precios</a>
             <Link href="/login" className="px-5 py-2.5 rounded-full border border-white/10 hover:bg-white/5 transition-colors">
               Iniciar Sesión
             </Link>
@@ -30,72 +30,74 @@ export default function LandingPage() {
       <main>
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-6 overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
-          
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
+
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider uppercase bg-primary/10 text-primary border border-primary/20 rounded-full">
-                La revolución de la ISO 27001
+              <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider uppercase bg-accent/20 text-accent border border-accent/30 rounded-full">
+                LA REVOLUCIÓN DE LA ISO 27001
               </span>
               <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight">
-                Consigue tu ISO 27001 en <span className="text-gradient">6 semanas</span> <br />
+                Consigue tu ISO 27001 en <span className="text-accent underline decoration-4 underline-offset-8">6 semanas</span> <br />
                 sin consultores tradicionales
               </h1>
-              <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-                Compecer Express reemplaza al implementador tradicional: procesos automáticos, 
-                evidencias guiadas por IA y certificación directa. Ahorra tiempo y miles de euros.
+              <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+                Implementa ISO 27001 tú mismo con IA. Compecer Express genera políticas,
+                evidencias y documentación automáticamente. <strong>Ahorra más de $15,000 USD</strong> y elimina la burocracia.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/registro" className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary/90 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-xl shadow-primary/20">
-                  Activa tu cuenta <ArrowRight className="w-5 h-5" />
+                <Link href="/registro" className="w-full sm:w-auto px-8 py-4 bg-accent text-primary-foreground hover:bg-accent/90 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-xl shadow-accent/20">
+                  Empezar ahora <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="#demo" className="w-full sm:w-auto px-8 py-4 glass hover:bg-white/5 rounded-2xl font-bold text-lg transition-all">
-                  Ver Demostración
+                <a href="#solucion" className="w-full sm:w-auto px-8 py-4 glass hover:bg-white/5 rounded-2xl font-bold text-lg transition-all">
+                  Ver Cómo Funciona
                 </a>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Comparison Section */}
+        {/* Comparison Section - The Normatron Logic */}
         <section id="solucion" className="py-24 px-6 bg-slate-950/50">
           <div className="max-w-7xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">El cambio que representa Compecer</h2>
-            <p className="text-muted-foreground">Comparamos el modelo tradicional frente al futuro automatizado.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">¿Por qué pagar $15,000+ a un consultor?</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto italic">Tradicionalmente, la certificación era lenta, cara y manual. Compecer Express le da la vuelta.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02]">
+            <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02] relative opacity-80">
+              <div className="absolute -top-4 left-8 px-4 py-1 bg-red-500/20 text-red-400 border border-red-500/30 rounded-full text-xs font-bold">MODELO ANTIGUO</div>
               <h3 className="text-xl font-bold mb-6 text-red-400">Consultoría Tradicional</h3>
               <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-muted-foreground italic">
-                  <CheckCircle className="text-red-400/50 w-5 h-5" /> Coste: +15.000€ iniciales
+                <li className="flex items-center gap-3 text-muted-foreground">
+                  <CheckCircle className="text-red-400/50 w-5 h-5 flex-shrink-0" /> Coste: +$15.000 USD iniciales
                 </li>
-                <li className="flex items-center gap-3 text-muted-foreground italic">
-                  <CheckCircle className="text-red-400/50 w-5 h-5" /> Tiempo: 6-12 meses
+                <li className="flex items-center gap-3 text-muted-foreground">
+                  <CheckCircle className="text-red-400/50 w-5 h-5 flex-shrink-0" /> Tiempo: 6-12 meses de reuniones
                 </li>
-                <li className="flex items-center gap-3 text-muted-foreground italic">
-                  <CheckCircle className="text-red-400/50 w-5 h-5" /> Documentación manual y tediosa
+                <li className="flex items-center gap-3 text-muted-foreground">
+                  <CheckCircle className="text-red-400/50 w-5 h-5 flex-shrink-0" /> Documentos: 100% manuales
                 </li>
               </ul>
             </div>
-            
-            <div className="p-8 rounded-3xl border border-primary/20 bg-primary/5 shadow-2xl shadow-primary/10 scale-105">
-              <h3 className="text-xl font-bold mb-6 text-primary">Compecer Express (IA)</h3>
+
+            <div className="p-8 rounded-3xl border border-accent/20 bg-accent/5 shadow-2xl shadow-accent/10 scale-105 relative">
+              <div className="absolute -top-4 left-8 px-4 py-1 bg-accent text-primary-foreground rounded-full text-xs font-bold">MÉTODO COMPECER EXPRESS</div>
+              <h3 className="text-xl font-bold mb-6 text-accent">Automatización con IA</h3>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
-                  <CheckCircle className="text-primary w-5 h-5" /> Coste: 247€ / mes
+                  <CheckCircle className="text-accent w-5 h-5 flex-shrink-0" /> Coste: <span className="font-bold">$240 USD / mes</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <CheckCircle className="text-primary w-5 h-5" /> Tiempo: 6 semanas promedio
+                  <CheckCircle className="text-accent w-5 h-5 flex-shrink-0" /> Tiempo: <span className="font-bold underline decoration-accent">6 semanas promedio</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <CheckCircle className="text-primary w-5 h-5" /> Automatización total con IA
+                  <CheckCircle className="text-accent w-5 h-5 flex-shrink-0" /> Documentación: Generada por IA en segundos
                 </li>
               </ul>
             </div>
@@ -103,37 +105,34 @@ export default function LandingPage() {
         </section>
 
         {/* Features Section */}
-        <section id="como-funciona" className="py-24 px-6">
+        <section id="por-que-ia" className="py-24 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-3 gap-12">
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
-                  <Zap className="text-accent w-6 h-6" />
+              <div className="group space-y-4 p-8 rounded-3xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5 text-center md:text-left">
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
+                  <Zap className="text-primary w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold">IA Auditora</h3>
+                <h3 className="text-2xl font-bold leading-tight">Implementación Instantánea</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Basada en la norma ISO 27001, nuestra IA valida tus documentos y 
-                  te guía en cada paso del proceso de auditoría.
+                  Genera la Declaración de Aplicabilidad (SoA) y el Alcance en minutos. Sin redactar una sola palabra.
                 </p>
               </div>
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-2xl flex items-center justify-center mb-6">
-                  <FileText className="text-primary w-6 h-6" />
+              <div className="group space-y-4 p-8 rounded-3xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5 text-center md:text-left">
+                <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
+                  <FileText className="text-accent w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold">Generación Automática</h3>
+                <h3 className="text-2xl font-bold leading-tight">Evidencia Inteligente</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Crea políticas y procedimientos personalizados para tu empresa en 
-                  segundos, no en semanas de reuniones.
+                  Sube tus capturas y nuestra IA las valida según el estándar ISO 27001:2022. Auditoría en tiempo real.
                 </p>
               </div>
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6">
-                  <CheckCircle className="text-green-500 w-6 h-6" />
+              <div className="group space-y-4 p-8 rounded-3xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5 text-center md:text-left">
+                <div className="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
+                  <CheckCircle className="text-green-500 w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold">Ready Score</h3>
+                <h3 className="text-2xl font-bold leading-tight">Ready to Audit Score</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Visualiza en tiempo real qué tan cerca estás de la certificación 
-                  con nuestro panel de cumplimiento dinámico.
+                  Un panel visual que te indica exactamente qué día estás listo para que COMPECER emita tu certificado.
                 </p>
               </div>
             </div>
