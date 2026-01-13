@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#020617] text-white selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground selection:bg-accent/30">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -104,37 +104,73 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section id="por-que-ia" className="py-24 px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-12">
-              <div className="group space-y-4 p-8 rounded-3xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5 text-center md:text-left">
-                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
-                  <Zap className="text-primary w-8 h-8" />
+        {/* Pricing Section */}
+        <section id="precios" className="py-24 px-6 bg-[#001f3f]/30">
+          <div className="max-w-7xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-accent">Inversión Inteligente</h2>
+            <p className="text-xl text-muted-foreground">Olvida los pagos de $15,000. Obtén una plataforma de clase mundial.</p>
+          </div>
+
+          <div className="max-w-md mx-auto p-12 rounded-[2.5rem] border-2 border-accent bg-accent/5 shadow-2xl shadow-accent/20 relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-4 bg-accent text-primary-foreground transform rotate-12 translate-x-12 -translate-y-2 font-bold px-12">BEST VALUE</div>
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-4 uppercase tracking-widest text-accent">Certificación Express</h3>
+              <div className="flex items-center justify-center gap-1 mb-8">
+                <span className="text-5xl font-extrabold">$240</span>
+                <div className="text-left">
+                  <span className="block text-xl font-bold text-accent">USD</span>
+                  <span className="block text-sm text-muted-foreground">/mes</span>
                 </div>
-                <h3 className="text-2xl font-bold leading-tight">Implementación Instantánea</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Genera la Declaración de Aplicabilidad (SoA) y el Alcance en minutos. Sin redactar una sola palabra.
-                </p>
               </div>
-              <div className="group space-y-4 p-8 rounded-3xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5 text-center md:text-left">
-                <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
-                  <FileText className="text-accent w-8 h-8" />
+              <ul className="text-left space-y-4 mb-10">
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="text-accent w-5 h-5" /> Acceso ilimitado a IA Auditora
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="text-accent w-5 h-5" /> Generación automática de SGSI
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="text-accent w-5 h-5" /> Chat de Soporte Especializado
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="text-accent w-5 h-5" /> Ready Score en tiempo real
+                </li>
+              </ul>
+              <Link href="/registro" className="block w-full py-4 bg-accent text-primary-foreground hover:bg-accent/90 rounded-2xl font-bold text-lg transition-all shadow-lg shadow-accent/20">
+                Seleccionar Plan
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-24 px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-16 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-6">
+              {[
+                {
+                  q: "¿Es válido este certificado internacionalmente?",
+                  a: "Sí. Compecer emite certificados acreditados. Nuestra IA asegura que tu SGSI cumple al 100% con el estándar internacional ISO/IEC 27001:2022."
+                },
+                {
+                  q: "¿Qué pasa si ya tengo algunos documentos?",
+                  a: "Puedes subirlos a nuestra plataforma. Nuestra IA los analizará y te dirá exactamente qué falta o qué debes corregir para pasar la auditoría."
+                },
+                {
+                  q: "¿Necesito conocimientos técnicos previos?",
+                  a: "Para nada. La herramienta está diseñada para que cualquier gerente o encargado pueda implementarlo siguiendo las guías paso a paso de nuestra IA."
+                },
+                {
+                  q: "¿Cómo es el proceso de certificación final?",
+                  a: "Una vez que tu 'Ready Score' marque el 100%, un auditor humano de Compecer revisará el expediente generado por la IA para la emisión oficial."
+                }
+              ].map((faq, i) => (
+                <div key={i} className="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                  <h3 className="text-xl font-bold mb-4 text-accent">{faq.q}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
                 </div>
-                <h3 className="text-2xl font-bold leading-tight">Evidencia Inteligente</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Sube tus capturas y nuestra IA las valida según el estándar ISO 27001:2022. Auditoría en tiempo real.
-                </p>
-              </div>
-              <div className="group space-y-4 p-8 rounded-3xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5 text-center md:text-left">
-                <div className="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
-                  <CheckCircle className="text-green-500 w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold leading-tight">Ready to Audit Score</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Un panel visual que te indica exactamente qué día estás listo para que COMPECER emita tu certificado.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
