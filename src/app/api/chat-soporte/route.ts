@@ -1,7 +1,8 @@
 import OpenAI from 'openai';
 import { NextResponse } from 'next/server';
 
-const openai = new OpenAI({
+// El cliente se inicializa dentro del handler para evitar errores de build
+const getOpenAI = () => new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
 
@@ -37,6 +38,7 @@ export async function POST(req: Request) {
       4. Si no sabes algo, remítelos a un consultor real de Compecer.
     `;
 
+        const openai = getOpenAI();
         const response = await openai.chat.completions.create({
             model: "gpt-4o",
             messages: [
