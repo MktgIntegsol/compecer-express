@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-accent/30">
+    <div className="min-h-screen bg-white text-brand-darkgray selection:bg-brand-orange/30">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-brand-navy shadow-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -31,7 +31,7 @@ export default function LandingPage() {
       <main>
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-6 overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-brand-navy/10 dark:bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-brand-navy/10 blur-[120px] rounded-full pointer-events-none" />
 
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <motion.div
@@ -42,8 +42,8 @@ export default function LandingPage() {
               <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider uppercase bg-brand-orange/10 text-brand-orange border border-brand-orange/30 rounded-full">
                 LA REVOLUCIÓN DE LA ISO 27001
               </span>
-              <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight text-brand-darkgray dark:text-white">
-                Consigue tu ISO 27001 en <span className="text-gradient underline decoration-4 underline-offset-8">6 semanas</span> <br />
+              <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight text-brand-darkgray">
+                Consigue tu ISO 27001 en <span className="text-gradient underline decoration-4 underline-offset-8 whitespace-nowrap">6 semanas</span> <br />
                 sin consultores tradicionales
               </h1>
               <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -55,7 +55,7 @@ export default function LandingPage() {
                 <Link href="/registro" className="w-full sm:w-auto px-8 py-4 bg-brand-orange text-white hover:bg-brand-orange/90 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-xl shadow-brand-orange/20">
                   Empezar ahora <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="#solucion" className="w-full sm:w-auto px-8 py-4 glass hover:bg-white/5 rounded-2xl font-bold text-brand-navy dark:text-white text-lg transition-all">
+                <a href="#solucion" className="w-full sm:w-auto px-8 py-4 bg-white text-brand-navy hover:bg-gray-50 border border-gray-200 shadow-sm rounded-2xl font-bold text-lg transition-all">
                   Ver Cómo Funciona
                 </a>
               </div>
@@ -109,7 +109,7 @@ export default function LandingPage() {
         <section id="por-que-ia" className="py-24 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-3 gap-12">
-              <div className="group space-y-4 p-8 rounded-3xl hover:bg-gray-50 dark:hover:bg-white/[0.02] transition-colors border border-transparent hover:border-gray-200 dark:hover:border-white/5 text-center md:text-left">
+              <div className="group space-y-4 p-8 rounded-3xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200 text-center md:text-left">
                 <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
                   <Zap className="text-primary w-8 h-8" />
                 </div>
@@ -118,7 +118,7 @@ export default function LandingPage() {
                   Genera la Declaración de Aplicabilidad (SoA) y el Alcance en minutos. Sin redactar una sola palabra.
                 </p>
               </div>
-              <div className="group space-y-4 p-8 rounded-3xl hover:bg-gray-50 dark:hover:bg-white/[0.02] transition-colors border border-transparent hover:border-gray-200 dark:hover:border-white/5 text-center md:text-left">
+              <div className="group space-y-4 p-8 rounded-3xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200 text-center md:text-left">
                 <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
                   <FileText className="text-accent w-8 h-8" />
                 </div>
@@ -127,7 +127,7 @@ export default function LandingPage() {
                   Sube tus capturas y nuestra IA las valida según el estándar ISO 27001:2022. Auditoría en tiempo real.
                 </p>
               </div>
-              <div className="group space-y-4 p-8 rounded-3xl hover:bg-gray-50 dark:hover:bg-white/[0.02] transition-colors border border-transparent hover:border-gray-200 dark:hover:border-white/5 text-center md:text-left">
+              <div className="group space-y-4 p-8 rounded-3xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200 text-center md:text-left">
                 <div className="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
                   <CheckCircle className="text-green-500 w-8 h-8" />
                 </div>
@@ -180,9 +180,9 @@ export default function LandingPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 px-6 bg-gray-50 dark:bg-background">
+        <section className="py-24 px-6 bg-gray-50">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold mb-16 text-center text-brand-navy dark:text-white">Preguntas Frecuentes</h2>
+            <h2 className="text-4xl font-bold mb-16 text-center text-brand-navy">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
                 {
@@ -202,9 +202,9 @@ export default function LandingPage() {
                   a: "Una vez que tu 'Ready Score' marque el 100%, un auditor humano de Compecer revisará el expediente generado por la IA para la emisión oficial."
                 }
               ].map((faq, i) => (
-                <div key={i} className="p-8 rounded-3xl border border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.02] hover:bg-gray-50 dark:hover:bg-white/[0.04] transition-colors shadow-sm">
+                <div key={i} className="p-8 rounded-3xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors shadow-sm">
                   <h3 className="text-xl font-bold mb-4 text-brand-orange">{faq.q}</h3>
-                  <p className="text-gray-600 dark:text-muted-foreground leading-relaxed">{faq.a}</p>
+                  <p className="text-gray-600 leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -212,11 +212,11 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="py-20 border-t border-gray-200 dark:border-white/5 bg-white dark:bg-background">
+      <footer className="py-20 border-t border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:row items-center justify-between gap-8">
           <div className="flex items-center gap-3 opacity-80">
             <div className="logo-mark scale-50 origin-left grayscale"></div>
-            <span className="font-bold text-brand-darkgray dark:text-gray-400">COMPECER<sup className="text-[10px]">&reg;</sup> Express</span>
+            <span className="font-bold text-brand-darkgray">COMPECER<sup className="text-[10px]">&reg;</sup> Express</span>
           </div>
           <p className="text-muted-foreground text-sm">© 2026 Compecer Audit. Todos los derechos reservados.</p>
         </div>

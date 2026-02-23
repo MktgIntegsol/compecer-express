@@ -13,13 +13,24 @@ import {
     Zap,
     ArrowUpRight,
     Activity,
-    Plus
+    Plus,
+    User,
+    LogOut
 } from "lucide-react";
 import Link from "next/link";
 import { ModeToggle } from "@/components/mode-toggle";
 import { AIChatBot } from "@/components/ai-chatbot";
+import { supabase } from "@/lib/supabase";
+import { useRouter } from "next/navigation";
 
 export default function DashboardPage() {
+    const router = useRouter();
+
+    const handleLogout = async () => {
+        await supabase.auth.signOut();
+        router.push("/login");
+    };
+
     const stats = [
         { label: "Progreso Total", value: "35%", icon: Activity, color: "text-blue-500" },
         { label: "Documentos", value: "4/12", icon: FileText, color: "text-primary" },
@@ -61,9 +72,15 @@ export default function DashboardPage() {
                     <Link href="/ajustes" className="flex items-center gap-3 p-3 hover:bg-muted text-muted-foreground rounded-xl font-medium transition-all">
                         <Settings className="w-5 h-5" /> Ajustes
                     </Link>
+                    <Link href="/perfil" className="flex items-center gap-3 p-3 hover:bg-muted text-muted-foreground rounded-xl font-medium transition-all">
+                        <User className="w-5 h-5" /> Perfil
+                    </Link>
                 </nav>
 
-                <div className="mt-auto">
+                <div className="mt-auto space-y-4">
+                    <button onClick={handleLogout} className="w-full flex items-center gap-3 p-3 hover:bg-red-500/10 text-red-500 rounded-xl font-medium transition-all">
+                        <LogOut className="w-5 h-5" /> Cerrar Sesión
+                    </button>
                     <ModeToggle />
                 </div>
             </aside>

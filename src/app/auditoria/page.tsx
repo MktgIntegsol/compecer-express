@@ -26,12 +26,17 @@ import {
     Wand2,
     Download,
     X,
-    Menu
+    Menu,
+    User,
+    LogOut
 } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "@/components/mode-toggle";
 import { LayoutDashboard } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+import { useRouter } from "next/navigation";
+import { AIChatBot } from "@/components/ai-chatbot";
 
 interface Question {
     id: string;
@@ -63,6 +68,12 @@ export default function QuestionnairePage() {
     const [status, setStatus] = useState<"pending" | "success" | "warning">("pending");
     const [formData, setFormData] = useState({ companyName: "", sector: "", culture: "", techStack: "" });
     const [showSidebar, setShowSidebar] = useState(false);
+    const router = useRouter();
+
+    const handleLogout = async () => {
+        await supabase.auth.signOut();
+        router.push("/login");
+    };
 
     // Dynamic Form State
     const [dynamicQuestions, setDynamicQuestions] = useState<string[]>([]);
@@ -210,6 +221,12 @@ export default function QuestionnairePage() {
                     <Link href="/ajustes" className="w-full flex items-center gap-3 p-3 hover:bg-muted text-muted-foreground rounded-xl font-bold transition-all border border-card-border/50">
                         <Settings className="w-5 h-5 text-primary" /> Ajustes
                     </Link>
+                    <Link href="/perfil" className="w-full flex items-center gap-3 p-3 hover:bg-muted text-muted-foreground rounded-xl font-bold transition-all border border-card-border/50">
+                        <User className="w-5 h-5 text-primary" /> Perfil
+                    </Link>
+                    <button onClick={handleLogout} className="w-full flex items-center gap-3 p-3 mt-4 hover:bg-red-500/10 text-red-500 rounded-xl font-bold transition-all border border-red-500/20">
+                        <LogOut className="w-5 h-5" /> Cerrar Sesión
+                    </button>
                     <div className="mt-4">
                         <ModeToggle />
                     </div>
@@ -382,9 +399,13 @@ export default function QuestionnairePage() {
                     <p className="text-xs text-muted-foreground leading-relaxed font-medium">Si no tienes el documento, usa el generador. Basándonos en tu sector, te daremos una plantilla lista para adaptar.</p>
                 </div>
 
-                <button className="mt-auto w-full bg-muted border border-card-border p-4 rounded-xl text-xs font-bold hover:bg-card-border transition-all">Soporte por WhatsApp</button>
+                <div className="mt-auto w-full bg-primary/10 border border-primary/20 p-4 rounded-xl text-center">
+                    <p className="text-xs font-bold text-primary mb-1">¿Necesitas ayuda técnica?</p>
+                    <p className="text-[10px] text-muted-foreground font-medium">Habla con el Asistente ISO 27001 usando el botón de chat flotante.</p>
+                </div>
             </aside>
 
+            <AIChatBot />
         </div>
     );
 }
