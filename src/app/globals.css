@@ -2,29 +2,41 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #001f3f;
-  --primary: #003366;
-  /* Azul Compecer */
-  --accent: #FFCC00;
-  /* Oro Compecer */
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
+  --foreground: #4D4D4D;
+  --primary: #040079;
+  --accent: #FFB000;
+  --muted: #f9fafb;
+  --muted-foreground: #999999;
   --card: #ffffff;
   --card-border: rgba(0, 0, 0, 0.1);
+
+  /* COMPECER Brand Colors */
+  --brand-purple: #4C1A48;
+  --brand-navy: #040079;
+  --brand-lightgray: #999999;
+  --brand-darkgray: #4D4D4D;
+  --brand-orange: #FFB000;
+  --brand-gradient-start: #040079;
+  --brand-gradient-end: #4C1A48;
 }
 
 .dark {
-  --background: #001529;
-  /* Azul muy oscuro Compecer */
+  --background: #0f172a;
   --foreground: #f8fafc;
-  --primary: #33a1fd;
-  /* Azul vibrante para contraste */
-  --accent: #FFCC00;
-  /* Oro Compecer */
-  --muted: #002244;
+  --primary: #FFB000;
+  --accent: #040079;
+  --muted: #1e293b;
   --muted-foreground: #94a3b8;
-  --card: rgba(0, 21, 41, 0.8);
+  --card: rgba(15, 23, 42, 0.8);
   --card-border: rgba(255, 255, 255, 0.1);
+
+  --brand-purple: #4C1A48;
+  --brand-navy: #040079;
+  --brand-lightgray: #999999;
+  --brand-darkgray: #4D4D4D;
+  --brand-orange: #FFB000;
+  --brand-gradient-start: #040079;
+  --brand-gradient-end: #4C1A48;
 }
 
 @theme inline {
@@ -34,15 +46,93 @@
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Expose COMPECER colors to Tailwind */
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-lightgray: var(--brand-lightgray);
+  --color-brand-darkgray: var(--brand-darkgray);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-gradientStart: var(--brand-gradient-start);
+  --color-brand-gradientEnd: var(--brand-gradient-end);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* COMPECER Custom Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-navy);
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, var(--brand-gradient-start) 0%, var(--brand-gradient-end) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--brand-gradient-start) 0%, var(--brand-gradient-end) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-gradient-start) 0%, var(--brand-gradient-end) 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-mark::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  right: 4px;
+}
+
+.logo-mark-white {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-mark-white::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--brand-navy);
+  position: absolute;
+  right: 4px;
 }
 
 /* Glassmorphism utility */
@@ -51,10 +141,4 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
-}
-
-.text-gradient {
-  background: linear-gradient(to right, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
